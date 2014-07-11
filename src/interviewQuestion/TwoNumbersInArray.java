@@ -9,14 +9,22 @@ public class TwoNumbersInArray {
 		this.number = number;
 	}
 	
-	public void usingBinarySearch(){
+	public Boolean usingBinarySearch(){
 		//1. First sort the array
 		MergeSort m = new MergeSort(arrA);
 		int [] arrSorted = m.mergeSorting();
+		BinarySearch bs = new BinarySearch(arrSorted);
 		//2. now do the linear scan to the from the left array , say starting index i=0
 		//3. Calculate Rem_Sum = number - a[i]
 		//4. if Rem_Sum<0, move to the next element
 		//5. if Rem_Sum>0, Perform Binary Search on the remaining elements on the right side.
+		for(int i =0;i<arrA.length-1;i++){
+			int RemS = number - arrA[i];
+			if(RemS>0){
+				if(bs.Search(i+1, arrA.length-1, RemS)) return true;
+			}
+		}
+		return false;
 	}
 	public Boolean usingBothEnds(){
 		//1. First sort the array
@@ -45,9 +53,10 @@ public class TwoNumbersInArray {
 	
 	public static void main(String[] args){
 		int a [] = { 1,2,3,4,5,16,17,18,19,249};
-		int number = 250;
+		int number = 269;
 		TwoNumbersInArray tn = new TwoNumbersInArray(a, number);
-		System.out.println("Sum of two numbers in array A is "+ number + " ??? :" + tn.usingBothEnds());
+		System.out.println("USING Both Ends -Sum of two numbers in array A is "+ number + " ??? :" + tn.usingBothEnds());
+		System.out.println("USING Binary Search -Sum of two numbers in array A is "+ number + " ??? :" + tn.usingBinarySearch());
 	}
 
 }

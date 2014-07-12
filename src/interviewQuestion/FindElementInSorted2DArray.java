@@ -1,5 +1,5 @@
 package interviewQuestion;
-//Here objective is find an element in two dimentional array
+//Here objective is find an element in two dimensional array
 //all rows and columns of an array are sorted in ascending order respectively
 public class FindElementInSorted2DArray {
 		

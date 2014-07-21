@@ -1,5 +1,5 @@
 package interviewQuestion;
-//we will use binary search
+//we will use binary search techniques
 //if middle element is the peak element, return it
 //if middle element is smaller than its left element , we will get our peak element on the left half
 //if middle element is the smaller than its right element, we will our peak element on the right.

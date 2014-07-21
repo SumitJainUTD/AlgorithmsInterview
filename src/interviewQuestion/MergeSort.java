@@ -60,7 +60,7 @@ public class MergeSort {
 	}
 	
 	public static void main(String[] args){
-		int [] a = {2,1,6,3,9,4};
+		int [] a = {2,1,6,3,9,4,5,10};
 		MergeSort m = new MergeSort(a);
 		int [] b = m.mergeSorting();
 		m.displayArray(b);

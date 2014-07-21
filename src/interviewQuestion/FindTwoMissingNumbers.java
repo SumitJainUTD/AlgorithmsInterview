@@ -26,6 +26,7 @@ public class FindTwoMissingNumbers {
 			Np *=i;
 		}
 		int product = Np/P;
+//		System.out.println(product);
 		int diffSqr = (int)Math.sqrt(s*s-4*product); // (a-b)^2 = (a+b)^2-4ab
 		a = (s+diffSqr)/2;
 		b= s-a;

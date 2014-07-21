@@ -22,6 +22,8 @@ public class BinarySearch {
 		int number = 99;
 		BinarySearch b = new BinarySearch(a);
 		System.out.println("The "+ number + " present in array a ??? :" + b.Search(0, a.length-1, number));
+		number = 76;
+		System.out.println("The "+ number + " present in array a ??? :" + b.Search(0, a.length-1, number));
 		
 	}
 

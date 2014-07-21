@@ -3,17 +3,17 @@ package interviewQuestion;
 public class LinkListImplementation {
 	public static void main(String[] args) throws java.lang.Exception {
 		LinkedListT a = new LinkedListT();
-		a.addAtBegin(5);
-		// a.display();
-		a.addAtBegin(10);
-		// a.display();
-		a.addAtBegin(15);
+//		a.addAtBegin(5);
+//		// a.display();
+//		a.addAtBegin(10);
+//		// a.display();
+//		a.addAtBegin(15);
 		a.addAtEnd(20);
-		a.addAtEnd(200);
-		a.display();
-		a.deleteAtBegin();
-		a.display();
-		a.deleteAtEnd();
+//		a.addAtEnd(200);
+//		a.display();
+//		a.deleteAtBegin();
+//		a.display();
+//		a.deleteAtEnd();
 		a.display();
 	}
 }

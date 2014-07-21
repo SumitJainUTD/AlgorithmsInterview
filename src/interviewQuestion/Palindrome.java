@@ -1,5 +1,7 @@
 package interviewQuestion;
-
+//Use recursive approach
+//Compare first and last characters if they are not same- return false
+//If they are same make, remove the first and last characters and make a recursive call. 
 public class Palindrome {
 
 	public Boolean isPalindrome(String strX){

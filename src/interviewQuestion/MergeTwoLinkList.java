@@ -56,6 +56,7 @@ public class MergeTwoLinkList {
 		System.out.println("");
 	}
 	public static void main(String [] args){
+		System.out.println("Method : with Recurrsion");
 		LinkedListT a = new LinkedListT();
 		a.addAtBegin(8);a.addAtBegin(6);a.addAtBegin(5);
 		LinkedListT b = new LinkedListT();
@@ -63,16 +64,18 @@ public class MergeTwoLinkList {
 		MergeTwoLinkList m = new MergeTwoLinkList(a, b);
 		m.display(a.head);m.display(b.head);
 		Node result;
+		
 		result = m.recurrsionMerge(a.head, b.head);
 		m.display(result);
-		//method 2
-		System.out.println("Method : without recurrsion");
+		//method 2	
+		System.out.println("Method : without Recurrsion");
 		LinkedListT a1 = new LinkedListT();
 		a1.addAtBegin(18);a1.addAtBegin(6);a1.addAtBegin(2);
 		LinkedListT b1 = new LinkedListT();
 		b1.addAtBegin(19);b1.addAtBegin(17);b1.addAtBegin(3);b1.addAtBegin(1);
 		MergeTwoLinkList m1 = new MergeTwoLinkList(a1, b1);
-		m1.display(a1.head);m1.display(b1.head);		
+		m1.display(a1.head);m1.display(b1.head);
+		
 		LinkedListT res = m1.mergeWithOutRecur();
 		m1.display(res.head);
 	}

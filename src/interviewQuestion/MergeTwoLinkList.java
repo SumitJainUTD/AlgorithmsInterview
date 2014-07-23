@@ -1,5 +1,13 @@
 package interviewQuestion;
-
+//WithOut Recursion
+//create a new node say result
+//navigate through both the linked lists at the same time, starting from head
+//compare the first node values of both the linked lists
+//which ever is smaller, add it to the result node
+//move the head pointer of the linked list whose value was smaller
+//again compare the node values
+//keep doing until one list gets over
+//copy the rest of the nodes of unfinished list to the result 
 public class MergeTwoLinkList {	
 	private LinkedListT a;
 	private LinkedListT b;	

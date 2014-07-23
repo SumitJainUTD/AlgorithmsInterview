@@ -1,5 +1,16 @@
 package findLoopInLinkedList;
-
+//Find the Loop
+//Take two pointers, both starts from head
+//move one pointer with normal speed and another with double speed
+//if both pointers meets at some point, we have found the loop
+//Now find the loop length
+//at the point where both pointers have met, stop one pointer and keep moving the nother one
+//when another pointer meets the first pointer, stop. 
+//keep counting number of hops, that will your loop length
+//Now To break the loop
+//move one pointer by the loop length
+//now move both pointers with normal speed.
+//when secondpointer.next = first pointer, set secondpinter.next=null.
 public class FindLoopInLinkedList
 {	public LinkedListLoop a;
 	public int loopLength;

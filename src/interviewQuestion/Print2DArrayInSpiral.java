@@ -6,8 +6,7 @@ public class Print2DArrayInSpiral {
 			{ 17, 28, 29, 22, 7 }, { 16, 27, 30, 23, 8 },
 			{ 15, 26, 25, 24, 9 }, { 14, 13, 12, 11, 10 } };
 	int totalPrint = arrA[0].length*arrA[1].length;
-	public int printSpiral(int row_S, int row_E, int col_S, int col_E,
-			boolean reverse, boolean rowPrint) {
+	public int printSpiral(int row_S, int row_E, int col_S, int col_E,boolean reverse, boolean rowPrint) {
 		if (totalPrint < 0) {
 			return 1;
 		}

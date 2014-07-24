@@ -38,7 +38,7 @@ public class swap_ith_Element_FromFrontAndEnd
 			return null ; // both are same, No need for swaping
 		}
 		System.out.println("\nSwapping "+ i + " Node from the Front and from the End");
-		Node left=head;
+		Node left=head;//move  from left i nodes, in case i=1=>left_prev=NULL
 		Node left_prev = null;
 		int j=i;
 		while(j>1){
@@ -48,31 +48,28 @@ public class swap_ith_Element_FromFrontAndEnd
 		}
 		//System.out.println("\nleft pointing at " + left.data);
 		
-		Node right=head;
-		Node right_prev = null;
+		Node right=head;//move j=(len-i+1) from the start, which means i nodes from the end
+		Node right_prev = null;//in case i=len=> right will the first node => right_prev=NULL
 		j= len-i+1;
 		while(j>1){
-			right_prev = right;
-			
-			
+			right_prev = right;			
 			right = right.next;
 			j--;
 		}
-		//System.out.println("right pointing at " + right.data);
-		
-		if(left_prev!=null){
+		//System.out.println("right pointing at " + right.data);		
+		if(left_prev!=null){//if left_prev!=NUll=>left node is not the first node, so left_prev will point to right node
 			left_prev.next=right;
 		}
 		
-			if(right_prev!=null){
+			if(right_prev!=null){//if right_prev!=NUll=>right node is not the first node, so right_prev will point to left node
 			right_prev.next=left;
 		}
 		
-		Node temp = left.next;
+		Node temp = left.next;// now just swap the left.next and right.next to complete
 		left.next = right.next;
 		right.next = temp;
 		
-		if(i==1)
+		if(i==1)//change the head in case of i=1 or i=len.
 			head = right;
 		if(i==len)
 			head = left;

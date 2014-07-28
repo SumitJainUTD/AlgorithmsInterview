@@ -51,8 +51,7 @@ class LinkedListT{
 				x--;
 			}else{
 				return head;
-			}
-			
+			}			
 		}
 		Node newHead = ptrTwo.next;
 		ptrTwo_prev.next=ptrOne;
@@ -65,10 +64,8 @@ class LinkedListT{
 		Node n = new Node(data);
 		n.next = head;
 		head = n;
-	}
-	
+	}	
 	public void display(Node head){
-		//
 		Node currNode = head;
 		while(currNode!=null){
 			System.out.print("->" + currNode.data);

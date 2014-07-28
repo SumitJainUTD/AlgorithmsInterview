@@ -12,7 +12,7 @@ public class ReverseLinkedList {
 		a.addAtBegin(20);
 		a.addAtBegin(25);
 		a.addAtBegin(30);
-		System.out.print("Original Link List 1 : ");
+//		System.out.print("Original Link List 1 : ");
 		a.display(a.head);
 		a.reverseIterative(a.head);
 		LinkedListT b = new LinkedListT();
@@ -79,6 +79,10 @@ class LinkedListT{
 					System.out.println("\n Reverse Through Recursion");
 					display(ptrTwo);
 				}
+		}
+		else if(ptrOne!=null){
+			System.out.println("\n Reverse Through Recursion");
+			display(ptrOne);
 		}
 	}
 	public void display(Node head){

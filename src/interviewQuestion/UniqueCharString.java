@@ -1,7 +1,4 @@
 package interviewQuestion;
-
-import com.sun.org.apache.xml.internal.security.utils.JavaUtils;
-
 //This Program is to find out whether String contains all the unique characters 
 //With out using any additional data structures
 public class UniqueCharString {
@@ -16,6 +13,7 @@ public class UniqueCharString {
 	//Time Complexity : O(n)
 	//Space Complexity : O(1)
 	
+	//
 	public Boolean UniChars(){
 		Boolean [] bln = new Boolean[256];
 		for(int i=0;i<256;i++){

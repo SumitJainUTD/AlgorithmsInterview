@@ -31,7 +31,7 @@ public class StringPermutations {
 
 	public static void main(String[] args) throws java.lang.Exception {
 		// your code goes here
-		String s = "JAIN";
+		String s = "abc";
 		char[] arrCh = s.toCharArray();
 		StringPermutations i = new StringPermutations();
 		i.permutation(arrCh, 0, arrCh.length);

@@ -54,9 +54,14 @@ public class TwoNumbersInArray {
 	public static void main(String[] args){
 		int a [] = { 1,2,3,4,5,16,17,18,19,249};
 		int number = 269;
+		int number1 = 8;
 		TwoNumbersInArray tn = new TwoNumbersInArray(a, number);
 		System.out.println("USING Both Ends -Sum of two numbers in array A is "+ number + " ??? :" + tn.usingBothEnds());
 		System.out.println("USING Binary Search -Sum of two numbers in array A is "+ number + " ??? :" + tn.usingBinarySearch());
+		TwoNumbersInArray tn1 = new TwoNumbersInArray(a, number1);
+		System.out.println("USING Both Ends -Sum of two numbers in array A is "+ number1 + " ??? :" + tn1.usingBothEnds());
+		System.out.println("USING Binary Search -Sum of two numbers in array A is "+ number1 + " ??? :" + tn1.usingBinarySearch());
+		
 	}
 
 }

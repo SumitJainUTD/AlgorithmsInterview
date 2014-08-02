@@ -10,12 +10,14 @@ public class QuickSort
 		int mid = (low+high)/2;
 		int left = low;
 		int right = high;
-		int pivot = arrA[mid];
-	//	System.out.println("XXX" + pivot);
+		int pivot = arrA[mid]; //select middle element as pivot
 		while(left<=right){
-			while(arrA[left]<pivot) left++;
-			while(arrA[right]>pivot)right--;
-			//	System.out.println(arrA[left] + " " + pivot + " " + arrA[right] );
+			while(arrA[left]<pivot) left++;//find element which is greater than pivot
+			while(arrA[right]>pivot)right--;////find element which is smaller than pivot
+				//System.out.println(arrA[left] + " " + pivot + " " + arrA[right] );
+			//if we found the element on the left side which is greater than pivot
+			//and element on the right side which is smaller than pivot
+			//Swap them, and increase the left and right 
 			if(left<=right){
 				int temp = arrA[left];
 				arrA[left] = arrA[right];
@@ -24,6 +26,7 @@ public class QuickSort
 				right--;
 			}
 		}
+			//Recursion on left and right of the pivot
 			if(low<right)quickS(low,right);
 			if(left<high)quickS(left,high);
 	}

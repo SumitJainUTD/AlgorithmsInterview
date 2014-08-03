@@ -44,13 +44,13 @@ public class MergeTwoLinkList {
 		Node result = null;
 		if(nA==null) return nB;
 		else if(nB==null) return nA;
-		if(nA.data<nB.data){
-			result = nA;			
-			result.next = recurrsionMerge(nA.next, nB);
+		if(nA.data<nB.data){//Check which node has a smaller value
+			result = nA;			//add it to the result node
+			result.next = recurrsionMerge(nA.next, nB);//Recursive call and add the return node as result.next
 		}
 		else{
-			result = nB;
-			result.next = recurrsionMerge(nA, nB.next);
+			result = nB; //add it to the result node
+			result.next = recurrsionMerge(nA, nB.next); //Recursive call and add the return node as result.next 
 		}
 		return result;
 	}
@@ -64,7 +64,7 @@ public class MergeTwoLinkList {
 		System.out.println("");
 	}
 	public static void main(String [] args){
-		System.out.println("Method : with Recurrsion");
+		System.out.println("Method : with Recursion");
 		LinkedListT a = new LinkedListT();
 		a.addAtBegin(8);a.addAtBegin(6);a.addAtBegin(5);
 		LinkedListT b = new LinkedListT();
@@ -76,7 +76,7 @@ public class MergeTwoLinkList {
 		result = m.recurrsionMerge(a.head, b.head);
 		m.display(result);
 		//method 2	
-		System.out.println("Method : without Recurrsion");
+		System.out.println("Method : without Recursion");
 		LinkedListT a1 = new LinkedListT();
 		a1.addAtBegin(18);a1.addAtBegin(6);a1.addAtBegin(2);
 		LinkedListT b1 = new LinkedListT();

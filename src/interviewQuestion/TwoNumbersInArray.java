@@ -34,9 +34,9 @@ public class TwoNumbersInArray {
 		//3. add first (say 'a') and last element(say 'b') of the array say S
 		//4. if S > number , S = S-(last_element) + (element before that)
 		//5. if S < number , S = S - (first element) + (next element)
-		//6. if S=number, return true
-		//7. if 
+		//6. if S=number, return true		
 		//7. Repeat step 
+		//8. If iteration gets over and retrun false.
 		
 		int i =0;
 		int j = arrSorted.length-1;

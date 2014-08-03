@@ -18,10 +18,10 @@ public class LongestPrefixSequence {
 		return arrA[0].substring(0,resultLen);
 	}
 	public static void main(String args[]){
-		String [] arrA = {"Sumit","Summation","Summit","Sum"};
+		String x = "Sumit Summation Summit Sum";
+		String [] arrA = x.split(" ");
 		LongestPrefixSequence lp = new LongestPrefixSequence(arrA);
-		System.out.println("Common Prefix is : " + lp.findPrefix());
-		
+		System.out.println("Original String : " + x);
+		System.out.println("Common Prefix is : " + lp.findPrefix());		
 	}
-
 }

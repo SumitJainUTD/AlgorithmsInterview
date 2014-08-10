@@ -16,7 +16,7 @@ public class QuickSort
 			while(arrA[right]>pivot)right--;////find element which is smaller than pivot
 				//System.out.println(arrA[left] + " " + pivot + " " + arrA[right] );
 			//if we found the element on the left side which is greater than pivot
-			//and element on the right side which is smaller than pivot
+			//and element on the 	right side which is smaller than pivot
 			//Swap them, and increase the left and right 
 			if(left<=right){
 				int temp = arrA[left];

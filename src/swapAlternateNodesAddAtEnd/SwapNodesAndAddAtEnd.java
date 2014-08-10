@@ -1,8 +1,7 @@
-package reverseAlternateKNodes;
+package swapAlternateNodesAddAtEnd;
 
-public class ReverseAlternateKNodes {
-	public static void main (String[] args) throws java.lang.Exception
-	{
+public class SwapNodesAndAddAtEnd {
+	public static void main(String args[]){
 		LinkedListT a = new LinkedListT();
 		a.addAtEnd(1);a.addAtEnd(2);a.addAtEnd(3);
 		a.addAtEnd(4);a.addAtEnd(5);a.addAtEnd(6);
@@ -10,22 +9,12 @@ public class ReverseAlternateKNodes {
 		a.addAtEnd(10);a.addAtEnd(11);a.addAtEnd(12);
 		System.out.print("Original Link List 1 : ");
 		a.display(a.head);
-		int k = 2;
-		System.out.println("\n Recursion with 2k nodes");
-		Node n = a.reverseAlter2KNodes(a.head, 2);
+		Node n = a.solve(a.head);
 		a.display(n);
-		LinkedListT b = new LinkedListT();
-		b.addAtEnd(2);b.addAtEnd(4);b.addAtEnd(6);
-		b.addAtEnd(8);b.addAtEnd(10);b.addAtEnd(12);
-		b.addAtEnd(14);b.addAtEnd(16);b.addAtEnd(18);
-		b.addAtEnd(20);b.addAtEnd(22);b.addAtEnd(24);
-		System.out.print("\nOriginal Link List 2 : ");
-		b.display(b.head);
-		System.out.println("\n Recursion with k nodes");
-		n = b.reverseAlterKNodes(b.head, 3, true);		
-		b.display(n);
 	}
+	
 }
+
 class Node{
 	public int data;
 	public Node next;
@@ -39,36 +28,32 @@ class LinkedListT{
 	public LinkedListT(){
 		head=null;
 	}
-	public Node reverseAlterKNodes(Node head, int k, Boolean even){
-		int x = k;
-		Node moving = head;
-		Node head_prev = null;
-		Node head_next = null;
-		if(even){
-			while(x>0 && moving!=null){
-				head_next = moving.next;
-				moving.next = head_prev;
-				head_prev = moving;
-				moving = head_next;
-				x--;
+	public Node solve(Node head){
+			Node x = head;
+			while(x!=null){
+				x = x.next;
 			}
-			if(head!=null)
-				head.next = reverseAlterKNodes(moving, k, false);
-			return head_prev;			
-		}
-		else{
-			Node prev = moving;
-			while(x>1 && moving!=null){				
-				moving = moving.next;
-				x--;
-			}
-			if(moving!=null){				
-				moving.next = reverseAlterKNodes(moving.next, k, true);				
-			}
-			return prev;
-		}
-		
+			Node end = x;
+			Swap(head,end);
+			return head;
 	}
+	public Node Swap(Node head, Node end){
+		if(head.next.next.next!=null){
+				Node one = head.next;
+				Node one_next = one.next;
+				Node two = one.next.next;
+				head.next = one.next;
+				two.next = one;
+				one.next = null;
+				end.next = two;				
+				one_next.next = Swap(one_next.next,one);
+				return head;
+			}
+			else{
+				return head;
+			}
+			
+		}
 	public Node reverseAlter2KNodes(Node head, int k){
 		//process 2K nodes at a time
 		//reverse till k nodes and set the the pointer to k+1
@@ -121,4 +106,5 @@ class LinkedListT{
 		}		
 	}
 }
+
 

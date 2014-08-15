@@ -1,23 +1,24 @@
 package isBST;
 
 public class isBST {
+	public static Node prevNode = null;
 	//method 1: do inOrder and check if it is in ascending order
 	public boolean isBSTInOrder(Node root){
 		if(root!=null){
-			return checkBST(root, root.data);
+			return checkBST(root);
 		}else{
 			return true;
 		}
 	}
-	public boolean checkBST(Node root, int x){
+	public boolean checkBST(Node root){
 		if(root!=null){
-			checkBST(root.left, root.data);
-			System.out.println(x + "  " + root.data);
-			if(x>root.data){
+			if(!checkBST(root.left)) return false;
+			if(prevNode!=null &&  prevNode.data>=root.data){				
 				return false;
 			}
-			checkBST(root.right, root.data);
-		}
+			prevNode = root;
+			return checkBST(root.right);	
+			}		
 		return true;
 	}
 	public static void main(String args[]){
@@ -25,6 +26,7 @@ public class isBST {
 		b.insert(2);b.insert(5);
 		b.insert(1);b.insert(4);
 		isBST i = new isBST();
+		b.printTree();
 		System.out.println(i.isBSTInOrder(b.root));
 		Node root = new Node(2);
 		root.left = new Node(1);

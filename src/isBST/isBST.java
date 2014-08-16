@@ -21,6 +21,10 @@ public class isBST {
 			}		
 		return true;
 	}
+//	//method 2
+//	public boolean isBST2(Node root, Integer.MIN_VALUE){
+//		
+//	}
 	public static void main(String args[]){
 		BST b = new BST();
 		b.insert(2);b.insert(5);

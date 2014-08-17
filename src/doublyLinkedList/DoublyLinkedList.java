@@ -59,6 +59,7 @@ public class DoublyLinkedList {
 	public int getSize(){
 		return size;
 	}
+	
 	public void print(){
 		Node current = head;
 		while(current!=null){

@@ -1,44 +1,23 @@
 package treeToDLL;
-
+//Add more methods later
 public class treeToDblyLinkedList {
 	public static Node root = null;
 	public static Node head = null;
-	public static Node tail = null;
+	public static Node prev = null;
 	
-	public Node l,r;
-	public Node TreetoDLL(Node root){
+	
+	public void TreetoDLL(Node root){
 		if(root!=null){
-			System.out.println("  " + root.data);
-			Node leftTmp = root.left;
-			Node rytTmp = root.right;
-			l = TreetoDLL(leftTmp);
-			if(l!=null){
-				root.left = l;				
-				l.right = root;
-				return l;
-			}else if(l==null){
-				root.left = l;
-				return l;
+			TreetoDLL(root.left);
+			if(prev==null ){
+				head = root;
+			}else{
+				root.left = prev;
+				prev.right = root;
 			}
-			r = TreetoDLL(rytTmp);
-			if(r!=null){
-				root.right = r;
-				r.left = root;
-				return r;
-			}else if(l==null){
-				root.right = r;
-				return r;
-			}			
-		}
-		return root;
-//		
-	}
-	public Node getHead(Node x){
-		while(x!=null && x.left!=null){
-			x = x.left;
-		}
-		head = x;
-		return head;
+			prev = root;
+			TreetoDLL(root.right);
+		}				
 	}
 	public void printTree(){
 		inOrder(root);
@@ -66,9 +45,11 @@ public class treeToDblyLinkedList {
 		root.right.left = new Node(36);
 		
 		treeToDblyLinkedList t= new treeToDblyLinkedList();
-		//t.inOrder(root);
-		Node x = t.TreetoDLL(root);
-		t.print(t.getHead(x));
+		System.out.println(" InOrder Traversal :");
+		t.inOrder(root);
+		t.TreetoDLL(root);
+		System.out.println("\n Doubly Linked List  :");
+		t.print(head);
 		
 	}
 }

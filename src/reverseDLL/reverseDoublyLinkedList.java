@@ -24,6 +24,7 @@ public class reverseDoublyLinkedList {
 			current = current.next;
 		}
 	}
+	
 	public void add(int data){
 		Node n = new Node(data);
 		if(head==null){

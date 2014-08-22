@@ -21,28 +21,15 @@ public class DLLToBST {
 		size++;
 	}
 
-	public Node dLLtoBST(Node h, int size) {
-		root=null;
-		if (h != null && size > 0) {
-			int mid = size / 2;
-			Node current = h;
-			while (mid > 0) {
-				current = current.next;
-				mid--;
-			}
-			root = current;
-			if(root.prev != null){
-				root.prev = dLLtoBST(h, size / 2);
-			}			
-			if (current.next != null) {
-				root.next = dLLtoBST(current.next, size / 2);
-			} else {
-				root.next = null;
-			}
-
-		}else{
-			return h;
+	public Node dLLtoBST(int size) {
+		if (size <= 0) {
+			return null;
 		}
+		Node left = dLLtoBST(size / 2);		
+		Node root = head;		
+		head.prev = left;
+		head = head.next;
+		root.next = dLLtoBST(size-(size / 2)-1);		
 		return root;
 	}
 
@@ -69,14 +56,14 @@ public class DLLToBST {
 //		r.add(8);
 //		r.add(7);
 //		r.add(6);
-//		r.add(5);
-//		r.add(4);
+		r.add(5);
+		r.add(4);
 		r.add(3);
 		r.add(2);
 		r.add(1);
 		Node h = head;
 		r.printDLL(h);
-		Node x = r.dLLtoBST(h, size);
+		Node x = r.dLLtoBST(size);
 		r.inOrder(x);
 	}
 }

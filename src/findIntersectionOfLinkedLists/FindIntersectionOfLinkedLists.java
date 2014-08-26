@@ -115,7 +115,7 @@ class LinkedListIntersection{
 		return n;
 	}
 	public void createIntersection(LinkedListIntersection a, Node nd){
-		Node hd = a.head; // this is the list to whcih another list will intersect, n our example its list a
+		Node hd = a.head; // this is the list to whcih another list will intersect, in our example its list a
 		while(hd!=nd){
 			hd = hd.next;
 		}

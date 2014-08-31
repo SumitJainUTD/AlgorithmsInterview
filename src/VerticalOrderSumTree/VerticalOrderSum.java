@@ -8,11 +8,8 @@ public class VerticalOrderSum {
 	public int vertical(Node root, int level, boolean leftCall){
 		if(root!=null){
 			level = vertical(root.left,++level, true);
-			//System.out.println("level " + level + " data " + root.data);
-			
 			if(ht.get(level)!=null){
 				int x = ht.get(level) ;
-				//System.out.println(" Entering " + x + " level " + level );
 				ht.put(level, root.data+x);
 			}else{
 				ht.put(level, root.data);

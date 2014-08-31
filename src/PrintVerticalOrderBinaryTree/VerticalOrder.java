@@ -5,18 +5,14 @@ import java.util.TreeMap;
 
 public class VerticalOrder {
 	public static TreeMap<Integer, ArrayList> ht = new TreeMap<>();;
-	public static int  level;	
-	public ArrayList<ArrayList> main = new ArrayList<>();
+	public static int  level;
 	public ArrayList<Integer> al;
 	public int vertical(Node root, int level, boolean leftCall){
 		if(root!=null){
 			level = vertical(root.right,++level, true);
-			//System.out.println("level " + level + " data " + root.data);
-			
 			if(ht.get(level)!=null){
 				ArrayList x = ht.get(level) ;
 				x.add(root.data);
-				//System.out.println(" Entering " + x + " level " + level );
 				ht.put(level, x);
 			}else{
 				al = new ArrayList<>();
@@ -32,7 +28,6 @@ public class VerticalOrder {
 		}
 	}
 	public void printResult(TreeMap ht){
-//		Iterator it = ht.keySet().iterator();
 		Set<Integer> i = ht.keySet();		
 		for(int keys:i){
 			System.out.println(ht.get(keys));

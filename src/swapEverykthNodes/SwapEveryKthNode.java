@@ -1,4 +1,4 @@
-package swapEveryKthNode;
+package swapEverykthNodes;
 
 public class SwapEveryKthNode {	
 	public static void main (String[] args) throws java.lang.Exception
@@ -17,7 +17,7 @@ public class SwapEveryKthNode {
 		System.out.print("Original Link List 1 : ");
 		a.display(a.head);
 		int k = 4;
-		Node n = a.swapNodes(a.head, k);
+		Node n = a.reverseNodes(a.head, k);
 		System.out.println("\n Swap Every " + k + "th Node : ");
 		a.display(n);
 	}
@@ -35,7 +35,7 @@ class LinkedListT{
 	public LinkedListT(){
 		head=null;
 	}
-	public Node swapNodes(Node head, int k){
+	public Node reverseNodes(Node head, int k){
 		int x =k;
 		Node ptrOne = head;
 		Node ptrTwo_prev = head;
@@ -56,7 +56,7 @@ class LinkedListT{
 		Node newHead = ptrTwo.next;
 		ptrTwo_prev.next=ptrOne;
 		ptrTwo.next = ptrOne.next;
-		ptrOne.next = swapNodes(newHead, k);
+		ptrOne.next = reverseNodes(newHead, k);
 		return ptrTwo;
 	}
 	

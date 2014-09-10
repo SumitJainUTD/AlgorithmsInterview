@@ -34,7 +34,7 @@ public class MergeSortLinkedList {
 		Node newHead = oldHead.next;
 		oldHead.next = null;
 		oldHead = a;		
-		System.out.println(oldHead.data + "   " + newHead.data);
+//		System.out.println(oldHead.data + "   " + newHead.data);
 		Node t1 = mergeSort(oldHead);
 		Node t2 = mergeSort(newHead);
 		return MergeList(t1, t2);

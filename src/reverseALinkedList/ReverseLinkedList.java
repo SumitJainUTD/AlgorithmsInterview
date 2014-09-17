@@ -24,7 +24,9 @@ public class ReverseLinkedList {
 		System.out.println("___________________");
 		System.out.print("Original Link List 2 : ");
 		b.display(b.head);
-		b.reverseRecursion(b.head,b.head.next,null);
+		b.reverseRecursion(b.head,b.head.next,null);		
+		System.out.println("");
+		//b.display(x);
 	}
 }
 class Node{
@@ -83,6 +85,7 @@ class LinkedListT{
 			display(ptrOne);
 		}
 	}
+	
 	public void display(Node head){
 		//
 		Node currNode = head;

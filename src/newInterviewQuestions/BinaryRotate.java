@@ -1,7 +1,6 @@
 package newInterviewQuestions;
 
-public class BinaryRotate {
-	
+public class BinaryRotate {	
 	public int rotateBinary(int number){
 		int res = 0;
 		while(number>0){
@@ -16,5 +15,4 @@ public class BinaryRotate {
 		BinaryRotate b = new BinaryRotate();
 		System.out.println("Binary rotation of "+ x + " is : " + b.rotateBinary(x));
 	}
-
 }

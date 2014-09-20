@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class LevelOrderTraversal {
 	
-	public void levelOrder(Node root){
+	public void levelOrderNaiveApproach(Node root){
 		int h = height(root);
 		for(int i=1;i<=h;i++){
 			printLevels(root,i);
@@ -43,7 +43,6 @@ public class LevelOrderTraversal {
 			}
 			System.out.println("");
 		}
-
 	}
 	public static void main (String[] args) throws java.lang.Exception
 	{
@@ -56,7 +55,9 @@ public class LevelOrderTraversal {
 		root.right.right = new Node(35);
 		
 		LevelOrderTraversal i  = new LevelOrderTraversal();
-		//i.levelOrder(root);
+		System.out.println(" Output by Naive Approach : ");
+		i.levelOrderNaiveApproach(root);
+		System.out.println(" Output by Better Approach : ");
 		i.levelOrderQueue(root);
 	}
 }

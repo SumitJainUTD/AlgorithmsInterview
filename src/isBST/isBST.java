@@ -3,40 +3,61 @@ package isBST;
 public class isBST {
 	public static Node prevNode = null;
 	//method 1: do inOrder and check if it is in ascending order
-	public boolean isBSTInOrder(Node root){
+	
+	public boolean isBST1(Node root){
 		if(root!=null){
-			return checkBST(root);
-		}else{
-			return true;
-		}
-	}
-	public boolean checkBST(Node root){
-		if(root!=null){
-			if(!checkBST(root.left)) return false;
+			if(!isBST1(root.left)) return false;
 			if(prevNode!=null &&  prevNode.data>=root.data){				
 				return false;
 			}
 			prevNode = root;
-			return checkBST(root.right);	
+			return isBST1(root.right);	
 			}		
 		return true;
 	}
+	
 //	//method 2
-//	public boolean isBST2(Node root, Integer.MIN_VALUE){
-//		
-//	}
+	public boolean isBST2(Node root, int min, int max){
+		if(root!=null){
+			if(root.data>max || root.data<=min){
+				return false;
+			}
+			if(isBST2(root.left, min, root.data)==false||isBST2(root.right, root.data,max)==false){
+				return false;
+			}
+			return true;
+		}else{
+			return true;
+		}		
+	}
+	public void inorder(Node root){
+		if(root!=null){
+		inorder(root.left);
+		System.out.print("  " + root.data);
+		inorder(root.right);
+		}
+	}
 	public static void main(String args[]){
-		BST b = new BST();
-		b.insert(2);b.insert(5);
-		b.insert(1);b.insert(4);
 		isBST i = new isBST();
-		b.printTree();
-		System.out.println(i.isBSTInOrder(b.root));
-		Node root = new Node(2);
-		root.left = new Node(1);
-		root.right = new Node(3);
-		root.left.left = new Node(4);
-		System.out.println(i.isBSTInOrder(root));		
+		Node root = new Node(20);
+		root.left = new Node(10);
+		root.right = new Node(30);
+		root.left.left = new Node(5);
+		root.left.right = new Node(15);		
+		root.right.left = new Node(25);
+		root.right.right = new Node(35);		
+		System.out.println("Tree is " );
+		i.inorder(root);
+		System.out.println();
+		System.out.println("is Tree BST ?? METHOD 1 : " + i.isBST1(root));
+		System.out.println("is Tree BST ?? METHOD 2 : " + i.isBST2(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+		root.left.right.right = new Node(40);
+		System.out.println("Tree is " );
+		i.inorder(root);
+		System.out.println();
+		System.out.println("is Tree BST ?? METHOD 1 : " + i.isBST1(root));
+		System.out.println("is Tree BST ?? METHOD 2 : " + i.isBST2(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+		
 	}
 	
 }
@@ -49,56 +70,5 @@ class Node{
 		this.data = data;
 		left = null;
 		right = null;
-	}
-}
-class BST{
-	public Node root=null;
-	public boolean find(int id){
-		Node current = root;
-		while(current!=null){
-			if(current.data==id){
-				return true;
-			}else if(current.data>id){
-				current = current.left;
-			}else{
-				current = current.right;
-			}
-		}
-		return false;
-	}
-	public void insert(int id){
-		Node newNode = new Node(id);
-		if(root==null){
-			root = newNode;
-			return;
-		}
-		Node current = root;
-		Node parent = null;
-		while(true){
-			parent = current;
-			if(id<current.data){				
-				current = current.left;
-				if(current==null){
-					parent.left = newNode;
-					return;
-				}
-			}else{
-				current = current.right;
-				if(current==null){
-					parent.right = newNode;
-					return;
-				}
-			}
-		}
-	}
-	public void printTree(){
-		inOrder(root);
-	}
-	public void inOrder(Node root){
-		if(root!=null){
-			inOrder(root.left);
-			System.out.print(" " + root.data);
-			inOrder(root.right);
-		}
 	}
 }

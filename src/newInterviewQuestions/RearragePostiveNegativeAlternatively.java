@@ -23,10 +23,6 @@ public class RearragePostiveNegativeAlternatively {
 				
 			}
 		}
-		// for(int i=0;i<arrA.length;i++){
-		// 	System.out.print("  " + arrA[i]);
-		// }
-		// 	System.out.println("");
 		left =1;
 		int high =0;
 		while(arrA[high]<0)high++;

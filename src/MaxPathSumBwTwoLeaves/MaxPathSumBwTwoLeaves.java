@@ -1,8 +1,14 @@
 package MaxPathSumBwTwoLeaves;
 //Now we will calculate the max path sum between two leaves node
-//So our max path will be either on the left sub tree
-//our max path will be either on the right sub tree
-//Our max path will have some part in left and some part in right and passes through through
+//So our max path will be either on the left sub tree OR
+//our max path will be either on the right sub tree OR
+//Our max path will have some part in left and some part in right and passes through through the root
+//Take a variable say, "maxSoFar=0" this will our final result.
+//Do postOrder traversal, This will give you result from left and right subtree
+//Now at each node calcuate sumCurrent =Max of (result of leftSubtree,result of RightSubtree, result of leftSubtree+result of RightSubtree + Root data)
+//if(maxSoFar<sumCurrent) then maxSoFar = sumCurrent
+//at each node return max(result of leftSubtree,result of RightSubtree)+root.data;
+//See Picture
 public class MaxPathSumBwTwoLeaves {
 	
 	public static int maxSoFar =0;
@@ -46,7 +52,7 @@ public class MaxPathSumBwTwoLeaves {
 		
 		MaxPathSumBwTwoLeaves m = new MaxPathSumBwTwoLeaves();
 		m.maxPathSum(root);
-		System.out.println(maxSoFar);
+		System.out.println("Max Path Sum Between Two Leaves is " + maxSoFar);
 		//m.inorder(root);
 	}
 }

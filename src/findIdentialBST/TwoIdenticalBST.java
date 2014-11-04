@@ -15,9 +15,9 @@ public class TwoIdenticalBST {
 	}
 	public static void main(String args[]){
 		BST a = new BST();
-		a.insert(1);a.insert(4);a.insert(2);a.insert(3);a.insert(5);
+		a.insert(2);a.insert(4);a.insert(1);a.insert(3);a.insert(5);
 		BST b = new BST();
-		b.insert(1);b.insert(4);b.insert(2);b.insert(3);b.insert(5);
+		b.insert(2);b.insert(4);b.insert(1);b.insert(3);b.insert(5);
 		TwoIdenticalBST t = new TwoIdenticalBST();
 		System.out.println(t.identicalBSTs(a.root, b.root));
 		a.insert(11);b.insert(12);
@@ -73,16 +73,6 @@ class BST{
 					return;
 				}
 			}
-		}
-	}
-	public void printTree(){
-		inOrder(root);
-	}
-	public void inOrder(Node root){
-		if(root!=null){
-			inOrder(root.left);
-			System.out.print(" " + root.data);
-			inOrder(root.right);
 		}
 	}
 }

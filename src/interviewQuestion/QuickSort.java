@@ -38,7 +38,7 @@ public class QuickSort
 	public static void main (String[] args) throws java.lang.Exception
 	{
 		// your code goes here
-		int a [] = { 2,1,8,4,0,9,3,11};
+		int a [] = {6,2,4,12,10};
 		QuickSort i = new QuickSort(a);
 		System.out.print("UnSorted : ");
 		i.display();

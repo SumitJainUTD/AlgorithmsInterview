@@ -1,15 +1,15 @@
 package MaxSumLeafToRoot;
 
 public class MaxSumLeafToRoot {
-	static int max = -100000;
-	static Node leaf=null;
+	static int maxSum = -100000;
+	static Node maxLeaf=null;
 	static int currentSum =0;
 	public void maxSum(Node root, int sum){
 		if(root!=null){
 			sum=sum+root.data;
-			if(sum>max && root.left==null && root.right==null){
-				leaf = root;
-				max = sum;
+			if(sum>maxSum && root.left==null && root.right==null){
+				maxLeaf = root;
+				maxSum = sum;
 			}
 		//	System.out.println("Sum " + sum);
 			maxSum(root.left,sum);
@@ -37,8 +37,9 @@ public class MaxSumLeafToRoot {
 		
 		MaxSumLeafToRoot i = new MaxSumLeafToRoot();
 		i.maxSum(root,0);
-		System.out.println(max);
-		i.path(root,leaf);
+		System.out.println("Maximum Sum Leaf to Root path :" + maxSum);
+		System.out.print("Path :");
+		i.path(root,maxLeaf);
 		
 	}
 }

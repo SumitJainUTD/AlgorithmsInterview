@@ -4,7 +4,6 @@ public class SortedLLToBST {
 
 	public static Node head = null;
 	public BSTNode LLToBST(int start, int end){
-		//System.out.print ("\n" + start + "  " + end + "   ");
 		if(start>end)return null;
 		int mid = (start+end)/2;
 		BSTNode leftChild = LLToBST(start,mid-1);

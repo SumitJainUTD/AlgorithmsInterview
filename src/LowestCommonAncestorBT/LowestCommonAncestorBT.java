@@ -40,14 +40,14 @@ public class LowestCommonAncestorBT {
 		root.left.right.right = new Node(20);
 		
 		root.left.right.left.left = new Node(11);
-		Node n2 = new Node(12);
+		Node n2 = new Node(30);
 		root.left.right.left.right = n2 ;
 		
 		LowestCommonAncestorBT i = new LowestCommonAncestorBT();
 		Node x = i.getLCA(root,n1,n2);
-		System.out.println("LCA is " + x.data);
+		System.out.println("Lowest Common Ancestor ("+n1.data+", "+ n2.data +" ) is " + x.data);
 		x = i.getLCA(root,n2,n3);
-		System.out.println("LCA is " + x.data);
+		System.out.println("Lowest Common Ancestor ("+n2.data+", "+ n3.data +" ) is " + x.data);
 	}
 }
 

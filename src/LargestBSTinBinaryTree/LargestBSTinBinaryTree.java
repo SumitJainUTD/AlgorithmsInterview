@@ -2,28 +2,46 @@ package LargestBSTinBinaryTree;
 
 public class LargestBSTinBinaryTree {
 	public static int maxLen =0;
+	public static int currLen =0;
+	public static int leftMax =0;
+	public static int rightMin =0;
 	public static Node bstRoot = null;
-	public int largestBST(Node root, int min, int max, int currLen){
+	public int largestBST(Node root,boolean leftCall){
 		if(root==null){
 			return 0;
 		}
-		int x = largestBST(root.left, min, root.data,currLen);
-		currLen = x + 1;
-		if(currLen>maxLen){
-			maxLen = currLen;
-			bstRoot = root;
-		}
-		x = largestBST(root.right,root.data, max, currLen);
-		currLen = x + 1;
-		if(currLen>maxLen){
-			maxLen = currLen;
-			bstRoot = root;
-		}
-		if(root.data<max || root.data>=min){			
-			return currLen;
+		int x = largestBST(root.left,true);		
+		int y = largestBST(root.right,false);
+		if(leftCall){
+			if(root.data>x){
+				currLen++;
+			}else{
+				currLen=0;
+			}
+			if(currLen>maxLen){
+				maxLen=currLen;
+			}
+			if(leftMax<root.data){
+				leftMax = root.data;
+			}
+			return leftMax;
 		}else{
-			return 0;
+			if(root.data<y){
+				currLen++;
+			}else{
+				currLen=0;
+			}
+			if(currLen>maxLen){
+				maxLen=currLen;
+			}
+			if(rightMin>root.data){
+				rightMin = root.data;
+			}
+			return rightMin;
+			
 		}
+		
+		
 	}
 	public static void main(String args[]){
 		Node root = new Node(50);
@@ -37,8 +55,8 @@ public class LargestBSTinBinaryTree {
 		root.right.right.right = new Node(80);
 		
 		LargestBSTinBinaryTree l = new LargestBSTinBinaryTree();
-		l.largestBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE, 0);
-		System.out.println(bstRoot.data + "  " + maxLen);
+		l.largestBST(root,true);
+		System.out.println(maxLen);
 		
 	}
 }

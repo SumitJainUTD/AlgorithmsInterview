@@ -5,23 +5,23 @@ import java.util.TreeMap;
 public class VerticalOrderSum {
 	public static TreeMap<Integer, Integer> ht = new TreeMap<>();;
 	public static int  level;
-	public int vertical(Node root, int level, boolean leftCall){
-		if(root!=null){
-			level = vertical(root.left,++level, true);
+	public Node vertical(Node root, int level){
+		if(root==null){
+			return null;
+		}
+			Node x  = vertical(root.left,--level);
+			if(x==null){
+				level++;
+			}
 			if(ht.get(level)!=null){
-				int x = ht.get(level) ;
-				ht.put(level, root.data+x);
+				int y = ht.get(level) ;
+				ht.put(level, root.data+y);
 			}else{
 				ht.put(level, root.data);
 			}			
-			vertical(root.right,--level,false);
-			return level;
-		}else if(leftCall){
-			return --level;
-		}else{
-			return ++level;
+			return  vertical(root.right,++level);					
 		}
-	}
+	
 	public void printResult(TreeMap ht){
 //		Iterator it = ht.keySet().iterator();
 		Set<Integer> i = ht.keySet();		
@@ -39,12 +39,9 @@ public class VerticalOrderSum {
 		root.right.right = new Node(7);
 		
 		VerticalOrderSum p = new VerticalOrderSum();
-		p.vertical(root, 0, false);
-		p.printResult(ht);
-		
-		
-	}
-	
+		p.vertical(root, 0);
+		p.printResult(ht);		
+	}	
 }
 class Node{
 	int data;

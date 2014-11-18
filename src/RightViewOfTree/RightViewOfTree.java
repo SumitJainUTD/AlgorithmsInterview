@@ -11,8 +11,6 @@ public class RightViewOfTree {
 //print only when current level<nextLevel so this way you will print only the first element
 //for rest of the nodes on the the level currentLevel and nextLevel are equal so it wont print
 
-//Method 2:
-//do the Level order traversal and print the last node value
 	public static int currentLevel =0;
 	public void rightViewRecur(Node root, int nextLevel){
 		if(root==null) return;

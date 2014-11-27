@@ -1,7 +1,4 @@
 package BSTtoGreaterTree;
-
-import javax.sound.midi.SysexMessage;
-
 public class BSTtoGreaterTree {
 	public static int sum = 0;
 	public void greaterTree(Node root){

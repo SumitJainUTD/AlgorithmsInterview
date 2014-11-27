@@ -13,7 +13,7 @@ public class LowestCommonAncestorBST {
 		}
 		// If root<n1 and root<n2 then lowest common ancestor will be in right
 		// subtree.
-		else if (root.data <= n1.data && root.data < n2.data) {
+		else if (root.data < n1.data && root.data < n2.data) {
 			return LCA(root.right, n1, n2);
 		}
 		// if I am here that means i am at the root which is lowest common
@@ -46,13 +46,14 @@ public class LowestCommonAncestorBST {
 
 	public static void main(String[] args) throws java.lang.Exception {
 		Node root = new Node(15);
-		root.left = new Node(10);
+		Node n2 = new Node(10);
+		root.left = n2;
 		root.right = new Node(20);
 		Node n1 = new Node(5);
 		root.left.left = n1;
 		root.left.right = new Node(13);
-		Node n2 = new Node(14);
-		root.left.right.right = n2;
+		
+		root.left.right.right = new Node(14);
 		root.left.right.left = new Node(12);
 
 		LowestCommonAncestorBST i = new LowestCommonAncestorBST();

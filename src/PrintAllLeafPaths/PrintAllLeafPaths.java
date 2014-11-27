@@ -1,8 +1,6 @@
 package PrintAllLeafPaths;
 
 public class PrintAllLeafPaths {
-	int [] paths = new int[500];
-	int pathLength =0;
 	public void printPaths(Node root, int [] path, int pathLen){
 		if(root==null){
 			return;

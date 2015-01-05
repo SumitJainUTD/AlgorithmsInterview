@@ -48,19 +48,28 @@ public class MergeSortLinkedList {
 		Node t2 = mergeSort(newHead);
 		return MergeList(t1, t2); // merge the sorted lists
 	}
+	public void display(Node head) {
+		Node currNode = head;
+		while (currNode != null) {
+			System.out.print("->" + currNode.data);
+			currNode = currNode.next;
+		}
+	}
 
 	public static void main(String args[]) {
-		LinkedListT a = new LinkedListT();
-		a.addAtEnd(9);
-		a.addAtEnd(4);
-		a.addAtEnd(2);
-		a.addAtEnd(5);
-		a.addAtEnd(1);
-		a.addAtEnd(3);
+		Node a = new Node(9);
+		a.next = new Node(3);
+		a.next.next = new Node(4);
+		a.next.next.next = new Node(2);
+		a.next.next.next.next = new Node(5);
+		a.next.next.next.next.next = new Node(1);
 		MergeSortLinkedList m = new MergeSortLinkedList();
-		Node x = m.mergeSort(a.head);
-		a.display(x);
+		m.display(a);
+		Node x = m.mergeSort(a);
+		System.out.println("\n Sorted List: ");
+		m.display(x);
 	}
+	
 
 }
 
@@ -74,35 +83,4 @@ class Node {
 	}
 }
 
-class LinkedListT {
-	public Node head;
 
-	public LinkedListT() {
-		head = null;
-	}
-
-	public void addAtEnd(int data) {
-		Node n = new Node(data);
-
-		if (head == null) {
-			n.next = head;
-			head = n;
-		} else {
-			Node currNode = head;
-			while (currNode.next != null) {
-				// System.out.print("---->" + currNode.data);
-				currNode = currNode.next;
-			}
-			currNode.next = n;
-		}
-	}
-
-	public void display(Node head) {
-		System.out.println("");
-		Node currNode = head;
-		while (currNode != null) {
-			System.out.print("->" + currNode.data);
-			currNode = currNode.next;
-		}
-	}
-}

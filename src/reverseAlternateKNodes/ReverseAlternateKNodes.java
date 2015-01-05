@@ -11,7 +11,7 @@ public class ReverseAlternateKNodes {
 		System.out.print("Original Link List 1 : ");
 		a.display(a.head);
 		int k = 2;
-		System.out.println("\n Recursion with 2k nodes");
+		System.out.println("\n Recursion with 2k nodes where k = 2");
 		Node n = a.reverseAlter2KNodes(a.head, 2);
 		a.display(n);
 		LinkedListT b = new LinkedListT();
@@ -21,7 +21,7 @@ public class ReverseAlternateKNodes {
 		b.addAtEnd(20);b.addAtEnd(22);b.addAtEnd(24);
 		System.out.print("\nOriginal Link List 2 : ");
 		b.display(b.head);
-		System.out.println("\n Recursion with k nodes");
+		System.out.println("\n Recursion with k nodes where k=3");
 		n = b.reverseAlterKNodes(b.head, 3, true);		
 		b.display(n);
 	}

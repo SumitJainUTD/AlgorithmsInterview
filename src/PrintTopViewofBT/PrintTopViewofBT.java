@@ -1,6 +1,5 @@
 package PrintTopViewofBT;
 
-import java.util.ArrayList;
 import java.util.TreeMap;
 
 public class PrintTopViewofBT {
@@ -9,10 +8,9 @@ public class PrintTopViewofBT {
 	public Node topView(Node root, int level) {
 		if (root == null)
 			return null;
-		// System.out.println(level);
 		if (ht.containsKey(level)) {
 
-		} else {
+		} else {// print only the first element at each level in vertical order.
 			System.out.print(root.data + "   ");
 			ht.put(level, root.data);
 		}
@@ -38,8 +36,6 @@ public class PrintTopViewofBT {
 
 		PrintTopViewofBT p = new PrintTopViewofBT();
 		p.topView(root, 0);
-		// p.printResult(ht);
-
 	}
 }
 

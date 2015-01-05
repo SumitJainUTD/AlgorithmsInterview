@@ -12,25 +12,28 @@ public class InorderLevelOrderToTree {
 			return root;
 		}
 		int index = findIndex(inorder, rootVal, iStart, iEnd);
-		
-		int [] newleftLevel = newLevelOrder(inorder, levelOrder, iStart, index-1);
-		int [] newrighttLevel = newLevelOrder(inorder, levelOrder, index+1, iEnd);
-		
-		
+
+		int[] newleftLevel = newLevelOrder(inorder, levelOrder, iStart,
+				index - 1);
+		int[] newrighttLevel = newLevelOrder(inorder, levelOrder, index + 1,
+				iEnd);
+
 		root.left = makeBTree(inorder, newleftLevel, iStart, index - 1);
 		root.right = makeBTree(inorder, newrighttLevel, index + 1, iEnd);
-		
+
 		return root;
 	}
-	public int [] newLevelOrder(int [] inorder, int [] levelOrder, int iStart, int iEnd){
-		int [] newlevel = new int [iEnd-iStart+1];
-		int x =0;
-		for(int i = 0;i<levelOrder.length;i++){
-			if(findIndex(inorder, levelOrder[i], iStart, iEnd)!=-1){
-				newlevel[x]=levelOrder[i];
+
+	public int[] newLevelOrder(int[] inorder, int[] levelOrder, int iStart,
+			int iEnd) {
+		int[] newlevel = new int[iEnd - iStart + 1];
+		int x = 0;
+		for (int i = 0; i < levelOrder.length; i++) {
+			if (findIndex(inorder, levelOrder[i], iStart, iEnd) != -1) {
+				newlevel[x] = levelOrder[i];
 				x++;
 			}
-		}		
+		}
 		return newlevel;
 	}
 

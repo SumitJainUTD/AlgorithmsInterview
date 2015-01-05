@@ -1,7 +1,8 @@
 package InorderDFStoTree;
 
 public class InorderDFStoTree {
-	int indexDFS=0;
+	int indexDFS = 0;
+
 	public Node makeBTree(int[] inorder, int[] DFS, int iStart, int iEnd) {
 		if (iStart > iEnd) {
 			return null;
@@ -18,6 +19,7 @@ public class InorderDFStoTree {
 
 		return root;
 	}
+
 	public int findIndex(int[] inorder, int value, int iStart, int iEnd) {
 		int x = -1;
 		for (int i = iStart; i <= iEnd; i++) {

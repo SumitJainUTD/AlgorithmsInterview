@@ -54,6 +54,7 @@ public class AVLTree {
 		} else {
 			node.right = insert(node.right, data);
 		}
+		// update the node height
 		node.height = Math.max(getHeight(node.left), getHeight(node.right)) + 1;
 
 		int balDiff = getBalance(node);

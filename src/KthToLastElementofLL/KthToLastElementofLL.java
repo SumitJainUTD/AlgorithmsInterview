@@ -2,41 +2,44 @@ package KthToLastElementofLL;
 
 public class KthToLastElementofLL {
 
-	public int kthByRecursion(Node head, int k){
-		if(head==null){
+	public int kthByRecursion(Node head, int k) {
+		if (head == null) {
 			return 0;
 		}
-		int i =  kthByRecursion(head.next, k)+1;
-		if(i==k){
+		int i = kthByRecursion(head.next, k) + 1;
+		if (i == k) {
 			System.out.println(head.data);
 		}
 		return i;
 	}
-	public int kthByIteration(Node head, int k){
-		if(head==null){
+
+	public int kthByIteration(Node head, int k) {
+		if (head == null) {
 			return 0;
 		}
 		Node curr = head;
-		while(k>0){
-			curr=curr.next;
+		while (k > 0) {
+			curr = curr.next;
 			k--;
 		}
 		Node sec = head;
-		while(curr!=null){
+		while (curr != null) {
 			curr = curr.next;
 			sec = sec.next;
 		}
-		int i  = sec.data;
+		int i = sec.data;
 		return i;
 	}
-	public void display(Node head){
-		Node n=head;
-		while(n!=null){
+
+	public void display(Node head) {
+		Node n = head;
+		while (n != null) {
 			System.out.print("->" + n.data);
-			n=n.next;
+			n = n.next;
 		}
 	}
-	public static void main(String args[]){
+
+	public static void main(String args[]) {
 		Node n = new Node(1);
 		n.next = new Node(2);
 		n.next.next = new Node(8);
@@ -46,19 +49,21 @@ public class KthToLastElementofLL {
 		n.next.next.next.next.next.next = new Node(4);
 		System.out.print("Original List : ");
 		KthToLastElementofLL rm = new KthToLastElementofLL();
-		rm.display(n);		
+		rm.display(n);
 		System.out.print("\n Recursion::3rd Element from the end is : ");
 		rm.kthByRecursion(n, 3);
-		System.out.print("\n Iteration::5th Element from the end is : " + rm.kthByIteration(n, 5));
-				
+		System.out.print("\n Iteration::5th Element from the end is : "
+				+ rm.kthByIteration(n, 5));
+
 	}
 }
-class Node{
+
+class Node {
 	int data;
 	Node next;
-	public Node(int data){
+
+	public Node(int data) {
 		this.data = data;
 		next = null;
 	}
 }
-

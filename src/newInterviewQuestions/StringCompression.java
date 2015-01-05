@@ -30,7 +30,7 @@ public class StringCompression {
 		String s1 = "ssssuuuummmmmmiiiittttttttttttt";
 		StringCompression sc = new StringCompression();
 		System.out.println("Compression of " + s1 + " is : " +sc.compression(s1));
-		s1 = "Jaain";
+		s1 = "Jaaaaaaaaain";
 		System.out.println("Compression of " + s1 + " is : " +sc.compression(s1));
 	}
 

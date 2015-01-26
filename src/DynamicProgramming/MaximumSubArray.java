@@ -1,7 +1,7 @@
 package DynamicProgramming;
 
 public class MaximumSubArray {
-	// Kandane algorithm
+	// Kadane algorithm
 	public int kandane(int[] arrA) {
 		int max_end_here = 0;
 		int max_so_far = 0;

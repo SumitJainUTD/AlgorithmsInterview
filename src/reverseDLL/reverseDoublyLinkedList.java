@@ -15,7 +15,8 @@ public class reverseDoublyLinkedList {
 			current = current.prev;
 		}
 		return temp.prev;
-	}
+	}	
+	
 	public void print(Node head){
 		Node current = head;
 		while(current!=null){
